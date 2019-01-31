@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --title-colour: #fff;
+  --caret-colour: #1075ce;
+
+  --btn--delete-colour: #fc7079;
+  --btn--delete-border: #f4515c;
+  --btn--delete-hover: #f4515c;
+  --btn--complete-colour: #8cdbeb;
+  --btn--complete-border: #8cdbeb;
+  --btn--complete-hover: #12c2e9;
+
+  --input--box-fontsize: 1rem;
+  --btn--radius-md: 3px;
+
+
+
+}

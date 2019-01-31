@@ -1,0 +1,8 @@
+.counter--total {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-size: 1.8rem;
+  color: var(--title-colour);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}

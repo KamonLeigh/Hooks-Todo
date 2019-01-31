@@ -1,0 +1,60 @@
+.todo--item {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.todo--item span {
+    letter-spacing: 1.2;
+    line-height: 1;
+    width: 150px;
+    word-break: break-all;
+}
+
+.todo--buttons {
+    margin-right: 5px;
+}
+
+.todo--item__edit{
+    font-size: var(--input--box-fontsize); 
+    caret-color: var(--caret-colour);
+    border-radius: var(--btn--radius-md);
+}
+
+
+
+.btn--md {
+    letter-spacing: 0.3px;
+    padding: 0.4em 0.8em;
+    color: #fff;
+    border-radius: var(--btn--radius-md);
+    cursor: pointer;
+}
+
+.btn--md__delete {
+    margin-right: 4px;
+    background:var(--btn--delete-colour);
+    border: var(--btn--delete-border);
+    transition: background 0.3s;
+}
+
+.btn--md__delete:hover,
+.btn--md__delete:focus {
+    background: var(--btn--delete-hover);
+}
+
+.btn--md__complete {
+    background: var(--btn--complete-colour);
+    border: var(--btn--complete-border);
+    transition: background 0.3s;
+}
+
+.btn--md__complete:hover,
+.btn--md__complete:focus {
+    background: var(--btn--complete-hover)
+}
+
+.btn--md:focus {
+    outline: none;
+}
