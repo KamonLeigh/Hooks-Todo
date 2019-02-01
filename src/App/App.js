@@ -3,6 +3,7 @@ import generateId from "./../lib/generateId";
 import Todo from "./../Todo/Todo";
 import TodoForm from "./../TodoForm/TodoForm";
 import Counter from "./../Counter/Counter";
+import TodoCompleteDelete from "./../TodoCompleteDelete/TodoCompleteDelete";
 import "./app.css";
 
 function App() {
@@ -123,6 +124,17 @@ function App() {
 
   }
 
+  const todoCompleteCount = () =>{
+
+    return todos.filter(todo => todo.isCompleted).length;
+
+  }
+
+  const todoCompleteDelete = () => {
+    const upDateTodos = todos.filter(todo => !todo.isCompleted);
+    setTodos(upDateTodos);
+  }
+
  
 
   return (
@@ -138,6 +150,8 @@ function App() {
         cancelTodo={cancelTodo}
         />
       <TodoForm addTodo={addTodo} />
+      { todoCompleteCount() > 0 && 
+         <TodoCompleteDelete  todoCompleteDelete={todoCompleteDelete}/>}
     </div>
   );
 }

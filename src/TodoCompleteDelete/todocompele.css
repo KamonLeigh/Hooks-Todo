@@ -1,0 +1,19 @@
+.btn--delete__complete{
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: start;
+    color: var(--title-colour);
+    border-radius: var(--main--btn-radius);
+    letter-spacing: var(--main--btn-letterSpacing);
+    font-size: calc(var(--input--box-fontsize) * 0.75);
+    padding: 0.8em 1.6em;
+    transition: background 0.3s;
+    background: #f33d49; ;
+    border:#f33d49;
+    ;
+}
+
+.btn--delete__complete:hover,
+.btn--delete__complete:focus{
+    background: #f51c2b;
+}

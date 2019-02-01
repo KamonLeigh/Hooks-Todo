@@ -28,13 +28,13 @@
 
 .btn--form {
   cursor: pointer;
-  font-size: var(--inpur--box-fontsize);
+  font-size: calc(var(--input--box-fontsize) * 0.75);
   padding: 0.8em 1.6em;
-  border-radius: 7px;
+  border-radius: var(--main--btn-radius);
   background: #428bca;
   border: #428bca;
   color: var(--title-colour);
-  letter-spacing: 1.2px;
+  letter-spacing: var(--main--btn-letterSpacing);
   transition: background 0.3s;
 }
 
