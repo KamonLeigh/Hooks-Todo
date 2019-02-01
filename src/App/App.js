@@ -4,6 +4,7 @@ import Todo from "./../Todo/Todo";
 import TodoForm from "./../TodoForm/TodoForm";
 import Counter from "./../Counter/Counter";
 import TodoCompleteDelete from "./../TodoCompleteDelete/TodoCompleteDelete";
+import TodoCheckAll from "./../TodoCheckAll/TodoCheckAll";
 import "./app.css";
 
 function App() {
@@ -135,6 +136,12 @@ function App() {
     setTodos(upDateTodos);
   }
 
+  const todoCheckAll = (state) => {
+
+    const cheakAllTodo = todos.map(todo => ({ ...todo,  ...todo.isCompleted = state}));
+    setTodos(cheakAllTodo);
+  }
+
  
 
   return (
@@ -149,7 +156,8 @@ function App() {
         editTodoDone={editTodoDone}
         cancelTodo={cancelTodo}
         />
-      <TodoForm addTodo={addTodo} />
+      { todos.length > 0 && <TodoCheckAll todoCheckAll={todoCheckAll }/>}
+         <TodoForm addTodo={addTodo} />
       { todoCompleteCount() > 0 && 
          <TodoCompleteDelete  todoCompleteDelete={todoCompleteDelete}/>}
     </div>

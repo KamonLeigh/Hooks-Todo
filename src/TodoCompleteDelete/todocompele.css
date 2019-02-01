@@ -1,5 +1,6 @@
 .btn--delete__complete{
     grid-column: 2 / 3;
+    grid-row: 7 / span 1;
     justify-self: center;
     align-self: start;
     color: var(--title-colour);
@@ -10,6 +11,7 @@
     transition: background 0.3s;
     background: #f33d49; ;
     border:#f33d49;
+    cursor: pointer;
     ;
 }
 

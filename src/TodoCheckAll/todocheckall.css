@@ -1,0 +1,8 @@
+.todo--checkall{
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+    font-size: calc(var(--input--box-fontsize) * 0.75);
+    letter-spacing: var(--main--btn-letterSpacing);
+    color: #fff;
+
+}
