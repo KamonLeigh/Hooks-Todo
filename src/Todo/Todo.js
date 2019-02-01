@@ -7,7 +7,7 @@ import "./todo.css";
   Better to add unique id
 */
 
-function Todo({ todos, completeTodo, deleteTodo, editTodo, editTodoDone }) {
+function Todo({ todos, completeTodo, deleteTodo, editTodo, editTodoDone, cancelTodo }) {
   const [filterTodos, setFilterTodos] = useState([]);
 
   useEffect(
@@ -52,6 +52,7 @@ function Todo({ todos, completeTodo, deleteTodo, editTodo, editTodoDone }) {
             deleteTodo={deleteTodo}
             editTodo={editTodo}
             editTodoDone={editTodoDone}
+            cancelTodo={cancelTodo}
         
           />
         )}

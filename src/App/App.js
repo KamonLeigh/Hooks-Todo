@@ -25,6 +25,7 @@ function App() {
   ]);
 
   const [count, setCount] = useState(0);
+  const [beforeEdit, setBeforeEdit ] = useState('');
 
   const addTodo = value => {
     const newTodo = [
@@ -58,6 +59,7 @@ function App() {
 
       if(todo.id === id){
         todo.isEditing = !todo.isEditing
+        setBeforeEdit(todo.text)
       }
       return todo
     })
@@ -70,34 +72,58 @@ function App() {
       if (!acc.isCompleted) {
         total++;
       }
-      console.log({ counter });
+
       return total;
     }, 0);
     setCount(count);
   };
 
+   useEffect(
+     () => {
+       counter();
+       return () => {};
+     },
+     [todos]
+   );
+
   const editTodoDone = (e, id) => {
-    const text = e.target.value
-    todos.map(todo => {
+    const text = e.target.value.trim()
+
+    if(text.length === 0){
+
+      cancelTodo(e, id);
+
+    } else {
+      const newTodos = todos.map(todo => {
+        if(todo.id === id){
+          todo.isEditing = !todo.isEditing;
+          todo.text = text
+        }
+        return todo;
+        
+      });
+      
+      setTodos(newTodos);
+    }
+  }
+
+  const cancelTodo = (e, id) => {
+    
+    const resetTodo = todos.map(todo => {
       if(todo.id === id){
-        todo.isEditing = !todo.isEditing;
-        todo.text = text
+        todo.text = beforeEdit; 
+        todo.isEditing = !todo.isEditing
+        e.target.value = beforeEdit;
+  
       }
       return todo;
-
     });
 
-    setTodos(todos);
+    setTodos(resetTodo);
 
   }
 
-  useEffect(
-    () => {
-      counter();
-      return () => {};
-    },
-    [todos]
-  );
+ 
 
   return (
     <div className="todo--app">
@@ -109,6 +135,7 @@ function App() {
         deleteTodo={deleteTodo} 
         editTodo={editTodo} 
         editTodoDone={editTodoDone}
+        cancelTodo={cancelTodo}
         />
       <TodoForm addTodo={addTodo} />
     </div>

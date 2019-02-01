@@ -3,7 +3,7 @@ import './todoitem.css';
 
 
 
-function TodoItem({id, text, isCompleted, isEditing, editTodo, editTodoDone, deleteTodo, completeTodo}){
+function TodoItem({id, text, isCompleted, isEditing, editTodo, editTodoDone, deleteTodo, completeTodo, cancelTodo}){
 
 
     return (
@@ -26,6 +26,14 @@ function TodoItem({id, text, isCompleted, isEditing, editTodo, editTodoDone, del
               autoFocus
               defaultValue={text}
               onBlur={(e) => editTodoDone(e , id)}
+              onKeyUp={(e) =>{
+                if(e.key === 'Enter'){
+                  editTodoDone(e, id);
+                } else if(e.key === 'Escape'){
+                  console.log('running')
+                    cancelTodo(e, id);
+                }
+              }}
               /> }
       
             <div className="todo--buttons">
